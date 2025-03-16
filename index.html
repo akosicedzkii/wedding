@@ -8,17 +8,18 @@
     body {
       font-family: Arial, sans-serif;
       background-image: url('bg.png'); /* Replace with your image URL */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #444;
       text-align: center;
       margin: 0;
       padding: 20px;
-      background-size: cover;
-      background-repeat: no-repeat;
     }
     .container {
-      max-width: 900px;
+      max-width: 600px;
       margin: auto;
-      background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+      background: rgba(255, 255, 255, 0.9);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -47,6 +48,39 @@
     }
     button:hover {
       background-color: #a00000;
+    }
+
+    /* Responsive Background for Mobile */
+    @media (max-width: 768px) {
+      body {
+        background-size: contain; /* Ensures the entire image fits on smaller screens */
+        background-attachment: scroll; /* Prevents fixed background issues on mobile */
+        padding: 10px;
+      }
+      .container {
+        padding: 15px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+      input, select, button {
+        padding: 8px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        background-size: cover; /* Adjust if needed based on the aspect ratio of the image */
+        padding: 5px;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      input, select, button {
+        padding: 6px;
+        font-size: 12px;
+      }
     }
   </style>
 </head>
